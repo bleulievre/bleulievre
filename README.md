@@ -20,12 +20,13 @@ supervised by Dr Rona Strawbridge. Manuscript in preparation.
 - **DNA-based eye-color prediction** — multinomial logistic regression on pigmentation SNPs, applied to
   1000 Genomes genotypes and compared with IrisPlex (undergraduate research, RPI and Chinese Academy of
   Sciences, 2021).
-- **Genetic and nutritional contributions to height** — 1000 Genomes variants in height-associated genes
-  combined with population height and nutrition data; regression, PCA and decision trees (RPI, 2023).
+- **[Genetic and nutritional contributions to height](https://github.com/bleulievre/height-genetics-nutrition)**
+  — 1000 Genomes variants in height-associated genes combined with country-level height and food-supply
+  data; regression and PCA (RPI, 2023).
 - **Smoking-status classification** — random forest, logistic regression and gradient boosting with class
   imbalance handling, and biological interpretation of the highest-ranked features (RPI, 2024).
 - **COVID-19 campus occupancy** — R and Shiny dashboards of room occupancy for RPI's campus COVID-19 data
-  effort (2020).
+  effort, supervised by Dr Kristin Bennett (2020).
 
 #### Skills
 
