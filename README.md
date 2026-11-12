@@ -11,7 +11,7 @@ to PhD programs beginning in fall 2027.
 #### Current research
 
 **Polygenic liability to bipolar disorder and the plasma proteome (UK Biobank)**: MSc dissertation,
-supervised by Dr Rona Strawbridge. Manuscript in preparation.
+supervised by [Dr Rona Strawbridge](https://www.gla.ac.uk/schools/healthwellbeing/staff/ronastrawbridge/). Manuscript in preparation.
 - [Two-page project overview (PDF)](portfolio/Research_Project_Overview.pdf)
 - [Code: dissertation script (public copy) and a tested re-implementation](https://github.com/bleulievre/bipolar-prs-proteomics)
 
