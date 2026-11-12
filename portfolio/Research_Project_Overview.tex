@@ -1,0 +1,106 @@
+\documentclass[10.5pt]{article}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\definecolor{accent}{HTML}{1F4E79}
+\titleformat{\section}{\color{accent}\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist{nosep,leftmargin=1.2em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\pagestyle{empty}
+
+\begin{document}
+
+{\color{accent}\LARGE\bfseries Polygenic Liability to Bipolar Disorder and the Plasma Proteome}\\[3pt]
+{\large Research Project Overview}
+
+\vspace{6pt}
+\textbf{Yunqi (Vicky) Liu} \quad MSc Medical Genetics and Genomics, University of Glasgow\\
+MSc dissertation project, June--August 2025 \quad Supervisor: Dr Rona Strawbridge\\
+\textbf{Status:} manuscript in preparation\\
+Code: \url{https://github.com/bleulievre/bipolar-prs-proteomics} \quad Contact: \href{mailto:vickyliu1998424@gmail.com}{vickyliu1998424@gmail.com}
+
+\section{Background}
+Bipolar disorder is highly heritable, yet its underlying mechanisms remain unclear and clinically useful blood
+biomarkers are still an open research question. Polygenic risk scores (PRS) summarize genetic liability across
+the genome and can be calculated for individuals with or without a diagnosis, so they allow liability to be related to
+biological measurements in a large population cohort. Large-scale plasma proteomics in UK Biobank now makes it
+possible to ask whether this liability is reflected in circulating protein levels.
+
+\section{Research question}
+Is polygenic liability to bipolar disorder associated with the levels of circulating plasma proteins in a
+population cohort, and do any such associations remain after adjustment for demographic, technical,
+lifestyle, cardiometabolic and psychiatric factors?
+
+\section{Data}
+\begin{itemize}
+  \item UK Biobank participants with genotype and Olink plasma proteomic data (49,239 participants in the
+        dataset supplied by the research group; about 730 protein assays).
+  \item Bipolar disorder PRS: LDpred scores from published Psychiatric Genomics Consortium summary statistics,
+        provided by the research group.
+  \item Covariates: age, sex, genetic principal components, genotyping array, deprivation, BMI, waist-to-hip
+        ratio, smoking, alcohol, blood pressure and medication, diabetes, cardiovascular history, and
+        psychiatric history and medication.
+\end{itemize}
+
+\section{Analysis design}
+\begin{enumerate}
+  \item \textbf{Quality control.} Profiled missingness for every assay and set an exclusion threshold for
+        poorly measured proteins.
+  \item \textbf{Screening.} Spearman rank correlation between the PRS and each protein, with a
+        Bonferroni-based threshold for the number of assays tested.
+  \item \textbf{Sequential multivariable regression.} Linear models for the screened proteins, adding covariate
+        groups step by step (basic, then lifestyle, cardiometabolic and medication covariates), with the
+        Bonferroni threshold reset at each step.
+  \item \textbf{Sensitivity analysis.} Repeated the final model after excluding participants with any lifetime
+        mental illness or psychiatric medication use, to assess whether the associations were robust to
+        excluding them.
+  \item \textbf{Biological interpretation.} Gene Ontology enrichment (clusterProfiler) and literature-based
+        functional annotation of the proteins that remained associated.
+\end{enumerate}
+A small set of candidate proteins remained associated after full adjustment and the sensitivity analysis.
+The specific proteins and estimates are withheld until the manuscript is published.
+
+\section{My role}
+\begin{itemize}
+  \item Cleaned and merged the UK Biobank extract and the psychiatric-history file, coded covariates, and set
+        the missing-data threshold.
+  \item Implemented the staged analysis in R under Dr Strawbridge's supervision, and interpreted the results
+        against published genetic and clinical evidence.
+  \item Wrote the dissertation, with a log of investigation recording what was done, why, and the
+        alternatives considered.
+\end{itemize}
+
+\section{Skills demonstrated}
+\begin{itemize}
+  \item \textbf{Statistics:} rank correlation, multiple-testing correction, multivariable linear regression,
+        sequential covariate adjustment, sensitivity analysis.
+  \item \textbf{Biobank data:} large-scale phenotype and proteomic data handling, missingness profiling,
+        covariate harmonization, linking auxiliary phenotype files.
+  \item \textbf{Programming:} R (dplyr, tidyr, ggplot2, clusterProfiler, org.Hs.eg.db).
+  \item \textbf{Interpretation:} pathway enrichment and protein-level literature review in the context of
+        psychiatric genetics.
+\end{itemize}
+
+\section{Current status}
+A manuscript is being prepared with Dr Strawbridge, and the analyses will be re-run within the approved
+UK Biobank project before submission. Separately, after the MSc, the dissertation analysis was re-implemented
+with AI coding assistance as a tested, configuration-driven pipeline that follows the original code step by step
+and runs end-to-end on simulated data.
+
+\section{What is available}
+\begin{itemize}
+  \item \textbf{Public:} a public copy of the dissertation R script (comments translated, protein names
+        removed) and the re-implemented pipeline with simulated data and tests, at the repository above. No
+        participant-level data, protein identities, effect estimates or findings are included.
+  \item \textbf{On request:} further materials, including the dissertation, can be shared with the
+        supervisor's agreement.
+\end{itemize}
+
+\end{document}
