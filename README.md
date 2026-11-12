@@ -41,7 +41,7 @@ institutions, so only descriptions are given here.
 
 #### Analytics and team projects
 
-- **Smoking-status classification from health measurements** (RPI, 2024). Random forest, logistic
+- **[Smoking-status classification from health measurements](https://github.com/bleulievre/smoking-status-ml)** (RPI, 2024). Random forest, logistic
   regression and gradient boosting on a public synthetic Kaggle dataset, with class-imbalance handling and
   biological interpretation of the highest-ranked features.
 - **Interpretable candidate–role matching** (RPI business analytics capstone with an industry partner,
